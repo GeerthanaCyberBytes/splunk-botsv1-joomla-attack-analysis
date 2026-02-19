@@ -35,4 +35,9 @@ index=botsv1 sourcetype="data-2"
 | stats count by host, uri
 | sort -count
 
+#botnet scan detect
+index=botsv1 sourcetype="data-3"
+("/admin" OR "/Login" OR "/Logon" OR "/scgi" OR "/MSWSMTP")
+| stats count by host uri
+| sort -count
 
