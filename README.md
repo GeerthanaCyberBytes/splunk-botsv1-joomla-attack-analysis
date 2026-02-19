@@ -106,9 +106,9 @@ Copy code
 
 Observed pattern:
 
-http://71.39.18.126/?wNO=...
-http://71.39.18.126/?xC=...
-http://71.39.18.126/?BVw=...
+"http://71.39.18.126/?wNO=..."
+"http://71.39.18.126/?xC=..."
+"http://71.39.18.126/?BVw=..."
 
 yaml
 Copy code
