@@ -8,7 +8,7 @@ The analysis traces the attack lifecycle from reconnaissance to exploitation, we
 
 ## Dataset
 
-- Source: Splunk BOTS v1  
+- Source: Splunk BOTS v1  https://s3.amazonaws.com/botsdataset/botsv1/splunk-pre-indexed/botsv1_data_set.tgz
 - Log types analyzed: IIS logs, HTTP artifacts (data-2), binary strings (data-3), authentication logs  
 
 ---
