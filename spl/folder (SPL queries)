@@ -11,23 +11,28 @@ botnet_scan.spl → data-3 scanning paths
 Template for each SPL file:
 
 # recon.spl
-index=botsv1 sourcetype="data-2"
-| rex field=_raw "(?i)joomla|administrator|com_installer|com_extplorer"
-| stats count by _raw
+index=botsv1 sourcetype="stream:http" 
+src_ip="40.80.148.42" dest_ip="192.168.250.70" 
+status=200 
+| stats count by uri 
+| sort -count
 
 # webshell_detection.spl
-index=botsv1 sourcetype="data-2" "agent.php"
-| stats count by _raw
+index=botsv1 sourcetype="data-2"
+"/joomla/agent.php"
+| stats count by host, uri
+| sort -count
 
 # c2_detection.spl
-index=botsv1 sourcetype="data-2" "71.39.18.126"
-| stats count by _raw
+index=botsv1 sourcetype="data-2"
+"71.39.18.126"
+| stats count by host, uri
+| sort -count
 
 # xss_detection.spl
-index=botsv1 sourcetype="data-2" "<script>"
-| stats count by _raw
+index=botsv1 sourcetype="data-2"
+"<script>"
+| stats count by host, uri
+| sort -count
 
-# botnet_scan.spl
-index=botsv1 sourcetype="data-3"
-| rex field=_raw "/admin|/scgi|/MSWSMTP|/tmui/"
-| stats count by _raw
+
