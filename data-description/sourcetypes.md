@@ -1,12 +1,12 @@
 # Sourcetypes Mapping
 
-| File | Suggested Sourcetype | Index |
-|------|-------------------|-------|
-| vendor_sales.log | vendor_sales | vendor_sales |
-| www*/access.log | apache_access | web_logs |
-| www*/secure.log | linux_secure | auth_logs |
-| mailsv/secure.log | linux_secure | auth_logs |
-| Strings.data (data-3) | data-3 | botsv1 |
+# BOTSv1 Source Type Mapping
+
+| Source Type      | Description                                                                                     | Example Fields / Use Case                                        |
+|-----------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| data-2           | Web server activity logs                                                                         | `_raw`, `host`, `cs_uri_stem`, `cs_uri_query`, detect Joomla enumeration, webshell access, XSS attempts, C2 beaconing |
+| data-3           | Botnet / exploit scanning logs                                                                   | `_raw`, `host`, automated scanning of admin/service endpoints, brute-force attempts |
+| stream:http      | Reconnaissance HTTP streams                                                                      | `src_ip`, `dest_ip`, `uri`, status, early attacker probing of Joomla endpoints |
 
 Notes:
 
