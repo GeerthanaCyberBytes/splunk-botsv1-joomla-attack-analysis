@@ -115,12 +115,6 @@ dashboards/
 
 
 ---
-
-## Conclusion
-
-
----
-
 ## Conclusion
 
 The Joomla server was fully compromised via web exploitation.  
